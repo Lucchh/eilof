@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="eilof",  # Name of your package
-    version="1.0.0",  # Version number
+    name="eilof",  
+    version="1.0.0",  
     description="Efficient implementation of Incremental Local Outlier Factor (EILOF).",
-    author="Rui Hu, Luc (Zhilu) Chen, Yiwei Wang",  # Replace with the authors' names
+    author="Rui Hu, Luc (Zhilu) Chen, Yiwei Wang",  
     author_email="rui.hu@csusb.edu, luchen@g.harvard.edu, yiweiw@ucr.edu",  # Replace with authors' emails
-    url="https://github.com/yourusername/eilof",  # Replace with your GitHub repository URL
-    packages=find_packages(),  # Automatically finds your package in the directory
+    url="https://github.com/Lucchh/eilof",  
+    packages=find_packages(), 
     install_requires=[
         "numpy>=2.0.0,<3.0.0",         
         "scipy>=1.13.0,<2.0.0",       
@@ -15,7 +15,7 @@ setup(
         "seaborn>=0.13.0,<1.0.0",     
         "scikit-learn>=1.6.0,<2.0.0", 
     ],
-    python_requires=">=3.8",  # Specify the required Python version
+    python_requires=">=3.8",  
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

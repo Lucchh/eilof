@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: eilof
+Version: 1.0.0
+Summary: Efficient implementation of Incremental Local Outlier Factor (EILOF).
+Home-page: https://github.com/Lucchh/eilof
+Author: Rui Hu, Luc (Zhilu) Chen, Yiwei Wang
+Author-email: rui.hu@csusb.edu, luchen@g.harvard.edu, yiweiw@ucr.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: numpy<3.0.0,>=2.0.0
+Requires-Dist: scipy<2.0.0,>=1.13.0
+Requires-Dist: matplotlib<4.0.0,>=3.9.0
+Requires-Dist: seaborn<1.0.0,>=0.13.0
+Requires-Dist: scikit-learn<2.0.0,>=1.6.0
