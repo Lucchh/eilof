@@ -22,5 +22,3 @@ setup(
         "Operating System :: OS Independent",
     ],
 )
-
-#push the message
