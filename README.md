@@ -7,21 +7,19 @@ EILOF is a Python package for outlier detection in data streams using an optimiz
 This package offers robust and scalable anomaly detection for real-time data analysis.
 
 ---
-
 ## Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Documentation](#documentation)
-- [Dataset Example](#dataset-example)
-- [Contributing](#contributing)
-- [Issues](#issues)
-- [License](#license)
-
+- [✨ Features](#features)
+- [🔧 Installation](#installation)
+- [📖 Getting Started](#getting-started)
+- [📚 Documentation](#documentation)
+- [📊 Dataset Example](#dataset-example)
+- [🤝 Contributing](#contributing)
+- [🐞 Issues](#issues)
+- [⚖️ License](#license)
 ---
 
-## 🔧 Features
+## ✨ Features
 
 - **Incremental Updates**: Efficiently updates LOF scores when new data points are streamed.  
 - **High Performance**: Optimized for computational efficiency in large-scale datasets.  
@@ -45,7 +43,7 @@ Below is an introduction to the main EILOF class and its usage. For more example
 
 ---
 
-## Documentation
+## 📚 Documentation
 
 ### References
 
@@ -220,7 +218,7 @@ lof_scores = lof_srs(dist_matrix, neighbors, lrd, k)
 print("LOF Scores:", lof_scores)
 ```
 
-## 📊 Example with a Real-World Dataset
+## 📊 Dataset Example
 
 **Dataset**: [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
@@ -254,14 +252,7 @@ print("Outlier Labels:", outlier_labels)
 
 ---
 
-## **License**
-
-This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for details.
-
-
----
-
-## **Contributing**
+## **🤝 Contributing**
 
 We welcome contributions to the EILOF package! To contribute:
 
@@ -282,6 +273,13 @@ We welcome contributions to the EILOF package! To contribute:
 
 ---
 
-## **Issues**
+## **🐞 Issues**
 
 If you encounter any issues or have feature requests, feel free to submit them [here](https://github.com/Lucchh/eilof/issues).
+
+---
+## **⚖️ License**
+
+This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for details.
+
+
