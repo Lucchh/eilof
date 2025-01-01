@@ -9,15 +9,15 @@ This package offers robust and scalable anomaly detection for real-time data ana
 ---
 ## Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Getting Started](#getting-started)
+- [Features](#features-section)
+- [Installation](#installation-section)
+- [Documentation](#documentation-section)
+- [Getting Started](#getting-started-section)
 - [Incremental Demo](#quick-start-incremental-demo)
-- [Dataset Example](#dataset-example)
-- [Contributing](#contributing)
-- [Issues](#issues)
-- [License](#license)
+- [Dataset Example](#dataset-example-section)
+- [Contributing](#contributing-section)
+- [Issues](#issues-section)
+- [License](#license-section)
 
 ---
 
