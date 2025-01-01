@@ -43,7 +43,7 @@ pip install eilof
 <h2 id="getting-started-section">📖 Getting Started</h2>
 
 
-Below is an introduction to the main EILOF class and its usage. For more examples, see the [Documentation(#documentation-section) section.
+Below is an introduction to the main EILOF class and its usage. For more examples, see the [Documentation](#documentation-section) section.
 
 ---
 
