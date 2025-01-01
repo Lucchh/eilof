@@ -1,11 +1,17 @@
 from setuptools import setup, find_packages
 
+# Read the content of your README.md file
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="eilof",  
-    version="1.0.0",  
+    version="1.0.1",  
     description="Efficient implementation of Incremental Local Outlier Factor (EILOF).",
+    long_description=long_description,  # Link README.md content
+    long_description_content_type="text/markdown",  # Specify Markdown format for PyPI
     author="Rui Hu, Luc (Zhilu) Chen, Yiwei Wang",  
-    author_email="rui.hu@csusb.edu, luchen@g.harvard.edu, yiweiw@ucr.edu",  # Replace with authors' emails
+    author_email="rui.hu@csusb.edu, luchen@g.harvard.edu, yiweiw@ucr.edu",  
     url="https://github.com/Lucchh/eilof",  
     packages=find_packages(), 
     install_requires=[
