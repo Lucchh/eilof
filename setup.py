@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="eilof",  
-    version="1.0.1",  
+    version="1.0.3",  
     description="Efficient implementation of Incremental Local Outlier Factor (EILOF).",
     long_description=long_description,  # Link README.md content
     long_description_content_type="text/markdown",  # Specify Markdown format for PyPI
@@ -15,7 +15,7 @@ setup(
     url="https://github.com/Lucchh/eilof",  
     packages=find_packages(), 
     install_requires=[
-        "numpy>=2.0.0,<3.0.0",         
+        "numpy>=1.20.0,<3.0.0",         
         "scipy>=1.13.0,<2.0.0",       
         "matplotlib>=3.9.0,<4.0.0",   
         "seaborn>=0.13.0,<1.0.0",     
