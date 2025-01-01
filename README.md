@@ -243,7 +243,7 @@ labels = data['Class']
 
 # Split into reference and streaming datasets
 reference_data = features[:2000]
-streaming_data = features[2000:3000]
+streaming_data = features[2000:2100]
 
 # Initialize and fit the EILOF model
 model = EILOF(k=50)
