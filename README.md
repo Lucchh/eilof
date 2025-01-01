@@ -12,13 +12,14 @@ This package offers robust and scalable anomaly detection for real-time data ana
 ## Table of Contents
 
 - [Features](#features-section)
-- [:wrench: Installation](#installation)
-- [:book: Getting Started](#getting-started)
-- [:books: Documentation](#documentation)
-- [:bar_chart: Dataset Example](#dataset-example)
-- [:handshake: Contributing](#contributing)
-- [:beetle: Issues](#issues)
-- [:scales: License](#license)
+- [Installation](#installation-section)
+- [Getting Started](#getting-started-section)
+- [Documentation](#documentation-section)
+- [Dataset Example](#dataset-example-section)
+- [Contributing](#contributing-section)
+- [Issues](#issues-section)
+- [License](#license-section)
+
 ---
 
 <h2 id="features-section">✨ Features</h2>
@@ -30,7 +31,7 @@ This package offers robust and scalable anomaly detection for real-time data ana
 
 ---
 
-## 🔧 Installation
+<h2 id="installation-section">🔧 Installation</h2>
 
 Install EILOF via pip:
 
@@ -39,13 +40,15 @@ pip install eilof
 
 ```
 
-## 📖 Getting Started
+<h2 id="getting-started-section">📖 Getting Started</h2>
+
 
 Below is an introduction to the main EILOF class and its usage. For more examples, see the [Documentation](#documentation) section.
 
 ---
 
-## 📚 Documentation
+<h2 id="documentation-section">📚 Documentation</h2>
+
 
 ### References
 
@@ -220,7 +223,8 @@ lof_scores = lof_srs(dist_matrix, neighbors, lrd, k)
 print("LOF Scores:", lof_scores)
 ```
 
-## 📊 Dataset Example
+<h2 id="dataset-example-section">📊 Dataset Example</h2>
+
 
 **Dataset**: [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
@@ -254,7 +258,8 @@ print("Outlier Labels:", outlier_labels)
 
 ---
 
-## **🤝 Contributing**
+<h2 id="contributing-section">🤝 Contributing</h2>
+
 
 We welcome contributions to the EILOF package! To contribute:
 
@@ -275,12 +280,14 @@ We welcome contributions to the EILOF package! To contribute:
 
 ---
 
-## 🐞 Issues
+<h2 id="issues-section">🐞 Issues</h2>
+
 
 If you encounter any issues or have feature requests, feel free to submit them [here](https://github.com/Lucchh/eilof/issues).
 
 ---
-## **⚖️ License**
+<h2 id="license-section">⚖️ License</h2>
+
 
 This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for details.
 
