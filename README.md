@@ -9,16 +9,15 @@ This package offers robust and scalable anomaly detection for real-time data ana
 ---
 ## Table of Contents
 
-## Table of Contents
-
-- [Features](#features-section)
-- [Installation](#installation-section)
-- [Getting Started](#getting-started-section)
-- [Documentation](#documentation-section)
-- [Dataset Example](#dataset-example-section)
-- [Contributing](#contributing-section)
-- [Issues](#issues-section)
-- [License](#license-section)
+- [Features](#features)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Getting Started](#getting-started)
+- [Incremental Demo](#quick-start-incremental-demo)
+- [Dataset Example](#dataset-example)
+- [Contributing](#contributing)
+- [Issues](#issues)
+- [License](#license)
 
 ---
 
@@ -28,6 +27,7 @@ This package offers robust and scalable anomaly detection for real-time data ana
 - **High Performance**: Optimized for computational efficiency in large-scale datasets.  
 - **Customizable Parameters**: Adjust the number of neighbors (k) for outlier detection.  
 - **Ease of Use**: Intuitive API with minimal setup.
+- **Typical Use-Case**: EILOF is especially suited for IoT data, streaming logs, or any scenario where new data arrives continuously, and retraining from scratch is impractical.
 
 ---
 
@@ -35,20 +35,14 @@ This package offers robust and scalable anomaly detection for real-time data ana
 
 Install EILOF via pip:
 
-```bash
+```python
 pip install eilof
-
 ```
 
-<h2 id="getting-started-section">📖 Getting Started</h2>
-
-
-Below is an introduction to the main EILOF class and its usage. For more examples, see the [Documentation](#documentation-section) section.
 
 ---
 
 <h2 id="documentation-section">📚 Documentation</h2>
-
 
 ### References
 
@@ -94,7 +88,62 @@ This is the primary class of the package that implements the **Efficient Increme
    - **Returns**: Binary array of outlier labels for the reference data.
 
 ---
+<h2 id="getting-started-section">📖 Getting Started</h2>
 
+Below is a quick overview showing how to initialize and use **EILOF** on a static dataset. However, the real power of EILOF lies in its **incremental update** functionality—check out the [Quick Start: Incremental Demo](#quick-start-incremental-demo).
+
+```python
+import numpy as np
+from eilof import EILOF
+
+# Create some reference data
+reference_data = np.random.rand(100, 2)
+
+# Initialize and fit the model
+model = EILOF(k=5)
+model.fit(reference_data)
+
+# Predict outliers on the reference data
+labels = model.predict_labels(threshold=95)
+print("Reference Outlier Labels:", labels)
+```
+
+<h2 id="quick-start-incremental-demo"> 🚀 Incremental Demo</h2>
+
+```python
+import numpy as np
+from eilof import EILOF
+
+# Suppose you have some initial reference data
+reference_data = np.random.rand(100, 2)
+
+# Initialize and fit the model on the reference data
+model = EILOF(k=5)
+model.fit(reference_data)
+
+# Simulate new streaming data arriving in small batches
+new_batch_1 = np.random.rand(5, 2)
+new_batch_2 = np.random.rand(3, 2)
+
+# Update the model with new streaming data
+model.update(new_batch_1)
+model.update(new_batch_2)
+
+# Predict outlier labels after incremental updates
+all_labels = model.predict_labels(threshold=70)
+print("All Data Labels (Reference + New):", all_labels)
+
+# Optionally, get only the new points' labels
+new_labels = model.predict_labels(threshold=95, include_reference=False)
+print("New Points' Labels:", new_labels)
+```
+
+
+With EILOF, the update() method efficiently adjusts LOF scores to reflect newly arrived points—making it ideal for:
+- Resource-constrained environments
+- Large-scale streaming scenarios
+- Time-sensitive applications
+    
 ### Utility Functions
 
 These utility functions are part of the EILOF package, designed to provide advanced users with flexibility and insights into the Local Outlier Factor (LOF) algorithm.
@@ -108,7 +157,7 @@ These utility functions are part of the EILOF package, designed to provide advan
    - **Returns**:
      - `neighbors (numpy.ndarray)`: Indices of the k nearest neighbors for each point.
    - **Example**:
-     ```bash
+     ```python
      import numpy as np
      from eilof import k_nearest_neighbors
 
@@ -126,7 +175,7 @@ These utility functions are part of the EILOF package, designed to provide advan
    - **Returns**:
      - `reach_dist_matrix (numpy.ndarray)`: Reachability distance matrix.
    - **Example**:
-     ```bash
+     ```python
      from eilof import reachability_distance
 
      reach_dist = reachability_distance(dist_matrix, 3)
@@ -142,7 +191,7 @@ These utility functions are part of the EILOF package, designed to provide advan
    - **Returns**:
      - `lrd (numpy.ndarray)`: Local Reachability Density values for all points.
    - **Example**:
-     ```bash
+     ```python
      from eilof import local_reachability_density
 
      lrd = local_reachability_density(reach_dist, neighbors)
@@ -160,27 +209,37 @@ These utility functions are part of the EILOF package, designed to provide advan
    - **Returns**:
      - `LOF_list (numpy.ndarray)`: LOF scores for all points.
    - **Example**:
-     ```bash
+     ```python
      from eilof import lof_srs
 
      lof_scores = lof_srs(dist_matrix, neighbors, lrd, 3)
      print("LOF Scores:", lof_scores)
      ```
 
-5. **compute_distances(updated_data, new_point)**
+5. **compute_distances(data, new_point)**
    - **Description**:  
      Computes the Euclidean distances of a new data point from all points in an existing dataset.
    - **Parameters**:
-     - `updated_data (numpy.ndarray)`: Existing dataset.
+     - `data (numpy.ndarray)`: Existing dataset.
      - `new_point (numpy.ndarray)`: New data point to compute distances for.
    - **Returns**:
      - `distances (numpy.ndarray)`: Array of distances between the new point and each point in the dataset.
    - **Example**:
-     ```bash
-     from eilof import compute_distances
+     ```python
+    import numpy as np
+    from eilof import compute_distances
 
-     distances = compute_distances(updated_data, new_point)
-     print("Distances:", distances)
+    data = np.array([
+        [1.0, 2.0, 3.0],
+        [4.0, 5.0, 6.0],
+        [7.0, 8.0, 9.0]
+    ])  
+
+    new_point = np.array([2.0, 3.0, 4.0]) 
+
+    # Calculate distances
+    distances = compute_distances(data, new_point)
+    print("Distances:", distances)
      ```
 
 6. **local_outlier_factor(data, k)**
@@ -192,16 +251,16 @@ These utility functions are part of the EILOF package, designed to provide advan
    - **Returns**:
      - `lof_scores (numpy.ndarray)`: Array of LOF scores.
    - **Example**:
-     ```bash
+     ```python
      from eilof import local_outlier_factor
 
-     lof_scores = local_outlier_factor(data, 3)
+     lof_scores = local_outlier_factor(data, 2)
      print("LOF Scores:", lof_scores)
      ```
 
 #### Example: Combining Multiple Utility Functions
 
-```bash
+```python
 import numpy as np
 from eilof import (
     k_nearest_neighbors,
@@ -228,13 +287,17 @@ print("LOF Scores:", lof_scores)
 
 **Dataset**: [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
-```bash
+```python
+# Ensure you have Kaggle API credentials set up for automatic dataset download
+import os
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from eilof import EILOF
+import kagglehub
 
-# Load dataset
-data = pd.read_csv('creditcard.csv')
+path = kagglehub.dataset_download("mlg-ulb/creditcardfraud")
+csv_file = os.path.join(path, "creditcard.csv")
+data = pd.read_csv(csv_file)
 
 # Preprocess data
 scaler = StandardScaler()
@@ -242,8 +305,8 @@ features = scaler.fit_transform(data.drop(columns=['Class']))
 labels = data['Class']
 
 # Split into reference and streaming datasets
-reference_data = features[:2000]
-streaming_data = features[2000:2100]
+reference_data = features[:500]
+streaming_data = features[500:510]
 
 # Initialize and fit the EILOF model
 model = EILOF(k=50)
@@ -265,15 +328,15 @@ We welcome contributions to the EILOF package! To contribute:
 
 1. Fork this repository.  
 2. Create a feature branch:  
-   ```bash
+   ```python
    git checkout -b feature-branch-name
    ```
 3. Commit your changes:
-   ```bash
+   ```python
    git commit -m "Add feature XYZ"
    ```
 4. Push to your branch:
-    ```bash
+    ```python
     git push origin feature-branch-name
     ```
 5. Create a pull request.
