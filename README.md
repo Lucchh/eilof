@@ -11,7 +11,7 @@ This package offers robust and scalable anomaly detection for real-time data ana
 
 ## Table of Contents
 
-- [:sparkles: Features](#features)
+- [Features](#features-section)
 - [:wrench: Installation](#installation)
 - [:book: Getting Started](#getting-started)
 - [:books: Documentation](#documentation)
@@ -21,7 +21,7 @@ This package offers robust and scalable anomaly detection for real-time data ana
 - [:scales: License](#license)
 ---
 
-## :sparkles: Features
+<h2 id="features-section">✨ Features</h2>
 
 - **Incremental Updates**: Efficiently updates LOF scores when new data points are streamed.  
 - **High Performance**: Optimized for computational efficiency in large-scale datasets.  
