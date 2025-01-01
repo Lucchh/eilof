@@ -273,7 +273,7 @@ We welcome contributions to the EILOF package! To contribute:
 
 ---
 
-## **🐞 Issues**
+## 🐞 Issues
 
 If you encounter any issues or have feature requests, feel free to submit them [here](https://github.com/Lucchh/eilof/issues).
 
