@@ -9,17 +9,19 @@ This package offers robust and scalable anomaly detection for real-time data ana
 ---
 ## Table of Contents
 
-- [✨ Features](#features)
-- [🔧 Installation](#installation)
-- [📖 Getting Started](#getting-started)
-- [📚 Documentation](#documentation)
-- [📊 Dataset Example](#dataset-example)
-- [🤝 Contributing](#contributing)
-- [🐞 Issues](#issues)
-- [⚖️ License](#license)
+## Table of Contents
+
+- [:sparkles: Features](#features)
+- [:wrench: Installation](#installation)
+- [:book: Getting Started](#getting-started)
+- [:books: Documentation](#documentation)
+- [:bar_chart: Dataset Example](#dataset-example)
+- [:handshake: Contributing](#contributing)
+- [:beetle: Issues](#issues)
+- [:scales: License](#license)
 ---
 
-## ✨ Features
+## :sparkles: Features
 
 - **Incremental Updates**: Efficiently updates LOF scores when new data points are streamed.  
 - **High Performance**: Optimized for computational efficiency in large-scale datasets.  
