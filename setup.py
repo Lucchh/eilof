@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="eilof",  
-    version="1.0.4",  
+    version="1.0.0",  
     description="Efficient implementation of Incremental Local Outlier Factor (EILOF).",
     long_description=long_description,  # Link README.md content
     long_description_content_type="text/markdown",  # Specify Markdown format for PyPI
@@ -22,9 +22,17 @@ setup(
         "scikit-learn>=1.0.0,<2.0.0",
     ],
     python_requires=">=3.8",  
-    classifiers=[
+        classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        "Topic :: Scientific/Engineering :: Information Analysis",
+        "Topic :: Scientific/Engineering :: Visualization",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: System :: Monitoring",
+        "Intended Audience :: Science/Research",
+        "Intended Audience :: Information Technology",
+        "Natural Language :: English",
     ],
 )

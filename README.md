@@ -1,10 +1,17 @@
 # EILOF: An Efficient Incremental Local Outlier Factor Algorithm for Data Streaming
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green)][MIT License]
+[![MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
+
 
 EILOF is a Python package for outlier detection in data streams using an optimized incremental implementation of the Local Outlier Factor (LOF). It is based on the research paper “An Efficient Outlier Detection Algorithm for Data Streaming” (publication forthcoming).
 
 This package offers robust and scalable anomaly detection for real-time data analysis.
+
+💻 Interactive Experiment Notebook
+
+Explore the EILOF Experiment Results Notebook on Google Colab to see the algorithm in action, including code, visualizations, and results.
+
+Click here to open the notebook directly: [EILOF Experiment Results Notebook](https://colab.research.google.com/drive/1uiOA3ZoTD-Flom0nC-7E7OgriK1xv0Bo?usp=sharing)
 
 ---
 ## Table of Contents
@@ -226,20 +233,20 @@ These utility functions are part of the EILOF package, designed to provide advan
      - `distances (numpy.ndarray)`: Array of distances between the new point and each point in the dataset.
    - **Example**:
      ```python
-    import numpy as np
-    from eilof import compute_distances
+     import numpy as np
+     from eilof import compute_distances
 
-    data = np.array([
-        [1.0, 2.0, 3.0],
-        [4.0, 5.0, 6.0],
-        [7.0, 8.0, 9.0]
-    ])  
+     data = np.array([
+         [1.0, 2.0, 3.0],
+         [4.0, 5.0, 6.0],
+         [7.0, 8.0, 9.0]
+     ])  
 
-    new_point = np.array([2.0, 3.0, 4.0]) 
+     new_point = np.array([2.0, 3.0, 4.0]) 
 
-    # Calculate distances
-    distances = compute_distances(data, new_point)
-    print("Distances:", distances)
+     # Calculate distances
+     distances = compute_distances(data, new_point)
+     print("Distances:", distances)
      ```
 
 6. **local_outlier_factor(data, k)**
